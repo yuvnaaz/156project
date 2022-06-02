@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <script src="./rotation.js"></script>
+    <script src="./coin.js"></script>
+    <script src="game.js"></script>
+
+</head>
+
+<body>
+    <a-scene background="color:#026F90">
+
+        <a-entity id="look" look-controls camera position="0 5 20"></a-entity>
+
+        <!--Asset Management-->
+        <a-assets timeout="10000">
+            <a-asset-item id="ocean" src="./l-p_shark_cage_diving_scene/scene.gltf"></a-asset-item>
+
+            <a-asset-item id="diver" src="./assets/scuba_driver/scene.gltf"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity position="-15.5 19.3 1">
+            <a-entity
+              position="-1.5 0.07 0"
+              text="font: aileronsemibold; width: 12; color: black; value: TIME\nREMAINING"
+            ></a-entity>
+            <a-entity
+              id="timer"
+              position="-9.8 0.3 0"
+              text="font: exo2bold; align: center; width: 30; color: black; value: 00:00"
+            ></a-entity>
+          </a-entity>
+
+          <a-entity position= "36.5 19.5 1">
+            <a-entity
+              position=""
+              text="font: aileronsemibold; width: 40; color: black; value: SCORE"
+            ></a-entity>
+            <a-entity
+              id="score"
+              position=" -13 0 0"
+              text="font: exo2bold; align: center; width: 40; color: black; value: 0"
+            ></a-entity>
+          </a-entity>
+  
+
+        <!-- Terrain  -->
+        <a-entity id="ocean" gltf-model="#ocean" po\sition="-7 0 0" scale="1.3 1.3 1.3"></a-entity>
+        <a-entity id="diver" gltf-model="#diver" position="7 0 0" scale="0.08 0.08 0.08" rotation="0 90 0" diver-rotation-reader></a-entity>
+        <a-entity position="0 0 0" id="treasureCoins" coins> </a-entity>
+
+    </a-scene>
+</body>
+
+</html>
